@@ -1,6 +1,8 @@
-<<<<<<< HEAD
-# ENIGMA_mdd_prs
-=======
-# ENIGMA_mdd_prs
->>>>>>> 005dfbbb69c97879d2c814d750f2534ad8352eeb
-# ENIGMA_mdd_prs
+# MDD PRS
+
+This repository was made to summarise scripts for preparing genetic data and calculating polygenic risk scores.
+
+## Prepare genetic data/summary statistics
+
+
+## Polygenic risk scores
