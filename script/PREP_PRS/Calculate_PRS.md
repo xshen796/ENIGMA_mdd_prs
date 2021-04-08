@@ -3,10 +3,6 @@ Calculate PRS
 X Shen
 08 April, 2021
 
-This page include PRSice set up and input preparation for calculating
-PRS. If you are already familiar with PRSice 2.0 and have a local copy
-of the package, please skip to file preparation.
-
 For more information about PRSice 2.0, see its [wiki
 page](http://prsice.info/)
 
@@ -24,7 +20,7 @@ cd ENIGMA_mdd_prs
 Set permission to files:
 
 ``` bash
-find . -executable -exec chmod +x {}
+find . -executable -exec chmod +x {} \;
 ```
 
 -----
@@ -77,7 +73,7 @@ A file will be created in *data/dummy\_pheno.txt .*
 
 ### Run PRSice
 
-Run file to generate all PRS using:
+Run file to generate all PRS using the command below.
 
 ``` bash
 bash job.PRS_prsice2.sh <base name for plink-format files>
@@ -86,7 +82,7 @@ bash job.PRS_prsice2.sh <base name for plink-format files>
 Here is an example using plink data in the *data* folder:
 
 ``` bash
-bash job.PRS_prsice2.sh data/TOY_TARGET_DATA.bim
+bash job.PRS_prsice2.sh data/TOY_TARGET_DATA
 ```
 
 -----

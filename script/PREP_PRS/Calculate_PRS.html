@@ -602,7 +602,6 @@ body {
 
 <h1 id="calculate-prs">Calculate PRS</h1>
 <p>X Shen 08 April, 2021</p>
-<p>This page include PRSice set up and input preparation for calculating PRS. If you are already familiar with PRSice 2.0 and have a local copy of the package, please skip to file preparation.</p>
 <p>For more information about PRSice 2.0, see its <a href="http://prsice.info/">wiki page</a></p>
 <hr />
 <h2 id="set-up-a-local-copy-of-the-github-repository">Set up a local copy of the github repository</h2>
@@ -610,7 +609,7 @@ body {
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="fu">git</span> clone https://github.com/xshen796/ENIGMA_mdd_prs.git</a>
 <a class="sourceLine" id="cb1-2" data-line-number="2"><span class="bu">cd</span> ENIGMA_mdd_prs</a></code></pre></div>
 <p>Set permission to files:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="fu">find</span> . -executable -exec chmod +x <span class="dt">{}</span></a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="fu">find</span> . -executable -exec chmod +x <span class="dt">{}</span> <span class="dt">\;</span></a></code></pre></div>
 <hr />
 <h2 id="environment-preparation">Environment preparation</h2>
 <p>R library required:</p>
@@ -633,10 +632,10 @@ body {
 <p>A file will be created in <em>data/dummy_pheno.txt .</em></p>
 <hr />
 <h3 id="run-prsice">Run PRSice</h3>
-<p>Run file to generate all PRS using:</p>
+<p>Run file to generate all PRS using the command below.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="fu">bash</span> job.PRS_prsice2.sh <span class="op">&lt;</span>base name for plink-format files<span class="op">&gt;</span></a></code></pre></div>
 <p>Here is an example using plink data in the <em>data</em> folder:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="fu">bash</span> job.PRS_prsice2.sh data/TOY_TARGET_DATA.bim</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="fu">bash</span> job.PRS_prsice2.sh data/TOY_TARGET_DATA</a></code></pre></div>
 <hr />
 <h3 id="a-checklist-for-output-files">A checklist for output files</h3>
 <p><strong>Polygenic risk scores</strong></p>
