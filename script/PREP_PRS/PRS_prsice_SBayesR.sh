@@ -1,11 +1,9 @@
-while getopts "g:p:o:s:n:" opt
+while getopts "g:o:s:" opt
 do
    case "$opt" in
       g ) parameterG="$OPTARG" ;;
-      p ) parameterP="$OPTARG" ;;
       o ) parameterO="$OPTARG" ;;
       s ) parameterS="$OPTARG" ;;
-      n ) parameterN="$OPTARG" ;;
       ? ) helpFunction ;; # Print helpFunction in case parameter is non-existent
    esac
 done
@@ -17,8 +15,8 @@ done
 
 # Settings ------------------------------------------------------------------------------
 
-prsice_R_file='/exports/igmm/eddie/GenScotDepression/shen/Tools/PRSice/PRSice.R'
-prsice_binary_file='/exports/igmm/eddie/GenScotDepression/shen/Tools/PRSice/PRSice_linux'
+prsice_R_file='util/PRSice.R'
+prsice_binary_file='util/PRSice_linux'
 
 # space/tab deliminated summary statistics in plain text
 gwas_summstats=$parameterS 
@@ -27,8 +25,8 @@ gwas_summstats=$parameterS
 plink_files=$parameterG 
 
 # Phenotype for MDD diagnosis: space/tab deliminated file. Columns: FID, IID, phenotype (e.g. MDD_diagnosis)
-phenotype_file=$parameterP
-pheno_name=$parameterN
+phenotype_file='data/dummy_pheno.txt'
+pheno_name='dummy_pheno'
 
 # prefix for the output files
 output_prefix=$parameterO 

@@ -1,8 +1,7 @@
-while getopts "g:p:o:s:" opt
+while getopts "g:o:s:" opt
 do
    case "$opt" in
       g ) parameterG="$OPTARG" ;;
-      p ) parameterP="$OPTARG" ;;
       o ) parameterO="$OPTARG" ;;
       s ) parameterS="$OPTARG" ;;
       ? ) helpFunction ;; # Print helpFunction in case parameter is non-existent
@@ -16,8 +15,8 @@ done
 
 # Settings ------------------------------------------------------------------------------
 
-prsice_R_file='PRSice/PRSice.R'
-prsice_binary_file='PRSice/PRSice_linux'
+prsice_R_file='util/PRSice.R'
+prsice_binary_file='util/PRSice_linux'
 
 # space/tab deliminated summary statistics in plain text
 gwas_summstats=$parameterS 
@@ -26,8 +25,8 @@ gwas_summstats=$parameterS
 plink_files=$parameterG 
 
 # Phenotype for MDD diagnosis: space/tab deliminated file. Columns: FID, IID, phenotype (e.g. MDD_diagnosis)
-phenotype_file=$parameterP
-pheno_name='dummy_MDD'
+phenotype_file='data/dummy_pheno.txt'
+pheno_name='dummy_pheno'
 
 # prefix for the output files
 output_prefix=$parameterO 
