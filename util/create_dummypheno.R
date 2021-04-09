@@ -1,5 +1,5 @@
-library(data.table)
 library(dplyr)
+library(optparse)
 
 # Load arguments ----------------------------------------------------------
 # Environment: R 3.6.1

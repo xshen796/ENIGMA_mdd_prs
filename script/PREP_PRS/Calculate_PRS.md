@@ -1,7 +1,7 @@
 Calculate PRS
 ================
 X Shen
-08 April, 2021
+09 April, 2021
 
 For more information about PRSice 2.0, see its [wiki
 page](http://prsice.info/)
@@ -27,20 +27,23 @@ find . -executable -exec chmod +x {} \;
 
 ## Environment preparation
 
-R library required:
+R libraries required:
 
   - dplyr
+  - optparse
 
 Open R, test if these packages are installed.
 
 ``` r
 library(dplyr)
+library(optparse)
 ```
 
-If R gives an error message, install the package using:
+If R gives an error message, install the package(s) using:
 
 ``` r
 install.packages('dplyr')
+install.packages('optparse')
 ```
 
 -----
@@ -49,13 +52,11 @@ install.packages('dplyr')
 
 #### Plink-format genetic data
 
-Find plink-format genetic data. At least three files should be included
-with suffixes: .bim, .bed, .fam.
+At least three files should be included with suffixes: .bim, .bed, .fam.
 
 #### Phenotype file
 
-Create a dummy file with the .bim file for genetic data. Use command
-given below.
+Create a dummy file with the .bim file. Use command given below.
 
 ``` bash
 Rscript util/create_dummypheno.R <.bim file location>
