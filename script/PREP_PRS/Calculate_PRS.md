@@ -68,13 +68,13 @@ Here is an example using plink data in the *data* folder:
 Rscript util/create_dummypheno.R data/TOY_TARGET_DATA.bim
 ```
 
-A file will be created in *data/dummy\_pheno.txt .*
+A file will be created as *data/dummy\_pheno.txt .*
 
 -----
 
 ### Run PRSice
 
-Run file to generate all PRS using the command below.
+Run the job file to generate all PRS using the command below.
 
 ``` bash
 bash job.PRS_prsice2.sh <base name for plink-format files>
