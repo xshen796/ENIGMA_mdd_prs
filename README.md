@@ -4,8 +4,8 @@ This repository was made to summarise scripts for preparing genetic data and cal
 
 ## Prepare GWAS summary statistics:
 
-Change SNP names from CHR:BP to RS format: https://github.com/xshen796/ENIGMA_mdd_prs/blob/main/PREP_genetic/SNP_rsID.md
+Change SNP names from CHR:BP to RS format: https://github.com/xshen796/ENIGMA_mdd_prs/blob/main/script/PREP_genetic/SNP_rsID.md
 
 
 ## Polygenic risk scores
-Use the protocol to create polygenic risk scores for the project: https://github.com/xshen796/ENIGMA_mdd_prs/blob/main/script/PREP_PRS/Calculate_PRS.md
+Create polygenic risk scores: https://github.com/xshen796/ENIGMA_mdd_prs/blob/main/script/PREP_PRS/Calculate_PRS.md
