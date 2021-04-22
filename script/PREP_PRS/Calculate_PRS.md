@@ -1,7 +1,7 @@
 Calculate PRS
 ================
 X Shen
-09 April, 2021
+22 April, 2021
 
 For more information about PRSice 2.0, see its [wiki
 page](http://prsice.info/)
@@ -59,13 +59,13 @@ At least three files should be included with suffixes: .bim, .bed, .fam.
 Create a dummy file with the .bim file. Use command given below.
 
 ``` bash
-Rscript util/create_dummypheno.R --bim <.bim file location>
+Rscript util/create_dummypheno.R <.bim file location>
 ```
 
 Here is an example using plink data in the *data* folder:
 
 ``` bash
-Rscript util/create_dummypheno.R --bim data/TOY_TARGET_DATA.bim
+Rscript util/create_dummypheno.R data/TOY_TARGET_DATA.bim
 ```
 
 A file will be created as *data/dummy\_pheno.txt .*
@@ -77,14 +77,22 @@ A file will be created as *data/dummy\_pheno.txt .*
 Run the job file to generate all PRS using the command below.
 
 ``` bash
-bash job.PRS_prsice2.sh <base name for plink-format files>
+bash job.PRS_prsice2.sh -d <base name for plink-format files>
 ```
 
 Here is an example using plink data in the *data* folder:
 
 ``` bash
-bash job.PRS_prsice2.sh data/TOY_TARGET_DATA
+bash job.PRS_prsice2.sh -d data/TOY_TARGET_DATA
 ```
+
+**\!\!** If you see an error about duplicated variants looking like:
+
+> Error: A total of 7456 duplicated SNP ID detected out of 5958288 input
+> SNPs\! …
+
+Run the above command again. The script will pick up the valid SNP list
+when re-calculating PRS.
 
 -----
 
