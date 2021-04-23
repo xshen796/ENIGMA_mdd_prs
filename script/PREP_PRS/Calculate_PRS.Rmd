@@ -87,39 +87,15 @@ Here is an example using plink data in the *data* folder:
 bash job.PRS_prsice2.sh -d data/TOY_TARGET_DATA
 ```
 
-**!!** If you see an error about duplicated variants looking like:
+**!!** If you see an error about duplicated variants looking like below, run the above command again. The script will pick up the valid SNP list when re-calculating PRS.
 
 > Error: A total of 7456 duplicated SNP ID detected out of 5958288 input SNPs! ...
-
-Run the above command again. The script will pick up the valid SNP list when re-calculating PRS.
 
 ------------------------------------------------------------------------
 
 ### A checklist for output files
 
-**Polygenic risk scores**
-
--   PRS/MDD_orig.all_scores
-
--   PRS/MDD_sbayesr.all_scores
-
--   PRS/BMI_orig.all_scores
-
--   PRS/BMI_sbayesr.all_scores
-
--   ...
-
-**SNP lists used for calculating PRS**
-
--   PRS/MDD_orig.snps
-
--   PRS/MDD_sbayesr.snps
-
--   PRS/BMI_orig.snps
-
--   PRS/BMI_sbayesr.snps
-
--   ...
+Check if all files present in the *PRS* folder. A checklist can be found [here](https://github.com/xshen796/ENIGMA_mdd_prs/blob/main/script/PREP_PRS/CheckList_output.md).
 
 ------------------------------------------------------------------------
 
