@@ -601,7 +601,7 @@ body {
 <body>
 
 <h1 id="calculate-prs">Calculate PRS</h1>
-<p>X Shen 22 April, 2021</p>
+<p>X Shen 23 April, 2021</p>
 <p>For more information about PRSice 2.0, see its <a href="http://prsice.info/">wiki page</a></p>
 <hr />
 <h2 id="set-up-a-local-copy-of-the-github-repository">Set up a local copy of the github repository</h2>
@@ -639,29 +639,13 @@ body {
 <div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="fu">bash</span> job.PRS_prsice2.sh -d <span class="op">&lt;</span>base name for plink-format files<span class="op">&gt;</span></a></code></pre></div>
 <p>Here is an example using plink data in the <em>data</em> folder:</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="fu">bash</span> job.PRS_prsice2.sh -d data/TOY_TARGET_DATA</a></code></pre></div>
-<p><strong>!!</strong> If you see an error about duplicated variants looking like:</p>
+<p><strong>!!</strong> If you see an error about duplicated variants looking like below, run the above command again. The script will pick up the valid SNP list when re-calculating PRS.</p>
 <blockquote>
 <p>Error: A total of 7456 duplicated SNP ID detected out of 5958288 input SNPs! …</p>
 </blockquote>
-<p>Run the above command again. The script will pick up the valid SNP list when re-calculating PRS.</p>
 <hr />
 <h3 id="a-checklist-for-output-files">A checklist for output files</h3>
-<p><strong>Polygenic risk scores</strong></p>
-<ul>
-<li><p>PRS/MDD_orig.all_scores</p></li>
-<li><p>PRS/MDD_sbayesr.all_scores</p></li>
-<li><p>PRS/BMI_orig.all_scores</p></li>
-<li><p>PRS/BMI_sbayesr.all_scores</p></li>
-<li><p>…</p></li>
-</ul>
-<p><strong>SNP lists used for calculating PRS</strong></p>
-<ul>
-<li><p>PRS/MDD_orig.snps</p></li>
-<li><p>PRS/MDD_sbayesr.snps</p></li>
-<li><p>PRS/BMI_orig.snps</p></li>
-<li><p>PRS/BMI_sbayesr.snps</p></li>
-<li><p>…</p></li>
-</ul>
+<p>Check if all files present in the <em>PRS</em> folder. A checklist can be found <a href="https://github.com/xshen796/ENIGMA_mdd_prs/blob/main/script/PREP_PRS/CheckList_output.md">here</a>.</p>
 <hr />
 <h3 id="upload-prs-and-supportive-files">Upload PRS and supportive files</h3>
 <p>Upload the entire <em>PRS</em> folder to the medflix server. &lt;to be finished&gt;</p>

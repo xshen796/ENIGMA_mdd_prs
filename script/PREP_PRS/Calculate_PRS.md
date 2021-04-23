@@ -1,7 +1,7 @@
 Calculate PRS
 ================
 X Shen
-22 April, 2021
+23 April, 2021
 
 For more information about PRSice 2.0, see its [wiki
 page](http://prsice.info/)
@@ -86,41 +86,19 @@ Here is an example using plink data in the *data* folder:
 bash job.PRS_prsice2.sh -d data/TOY_TARGET_DATA
 ```
 
-**\!\!** If you see an error about duplicated variants looking like:
+**\!\!** If you see an error about duplicated variants looking like
+below, run the above command again. The script will pick up the valid
+SNP list when re-calculating PRS.
 
 > Error: A total of 7456 duplicated SNP ID detected out of 5958288 input
 > SNPs\! …
-
-Run the above command again. The script will pick up the valid SNP list
-when re-calculating PRS.
 
 -----
 
 ### A checklist for output files
 
-**Polygenic risk scores**
-
-  - PRS/MDD\_orig.all\_scores
-
-  - PRS/MDD\_sbayesr.all\_scores
-
-  - PRS/BMI\_orig.all\_scores
-
-  - PRS/BMI\_sbayesr.all\_scores
-
-  - …
-
-**SNP lists used for calculating PRS**
-
-  - PRS/MDD\_orig.snps
-
-  - PRS/MDD\_sbayesr.snps
-
-  - PRS/BMI\_orig.snps
-
-  - PRS/BMI\_sbayesr.snps
-
-  - …
+Check if all files present in the *PRS* folder. A checklist can be found
+[here](https://github.com/xshen796/ENIGMA_mdd_prs/blob/main/script/PREP_PRS/CheckList_output.md).
 
 -----
 
