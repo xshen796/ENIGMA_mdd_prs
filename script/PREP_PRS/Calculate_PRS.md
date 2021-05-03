@@ -1,7 +1,7 @@
 Calculate PRS
 ================
 X Shen
-23 April, 2021
+03 May, 2021
 
 For more information about PRSice 2.0, see its [wiki
 page](http://prsice.info/)
@@ -104,4 +104,6 @@ Check if all files present in the *PRS* folder. A checklist can be found
 
 ### Upload PRS and supportive files
 
-Once you finished the protocol, please upload the entire *PRS* folder into your site folder in MediaFlux, which is only accessible by you and the chairs and coordinator of ENIGMA MDD (please let us know if you need the credentials). \<to be finished\>
+Upload the entire *PRS* folder to the medflix server. See a step-by-step
+guide
+[here](https://github.com/xshen796/ENIGMA_mdd_prs/blob/main/script/Accessing%20your%20folder%20on%20MediaFlux%20ENIGMA%20MDD%20storage%20system%20updated%20Aug2020%5B2%5D.pdf).
