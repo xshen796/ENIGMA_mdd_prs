@@ -104,4 +104,4 @@ Check if all files present in the *PRS* folder. A checklist can be found
 
 ### Upload PRS and supportive files
 
-Once you finished the protocol, please upload the entire *PRS* folder into your site folder in MediaFlux, which is only accessible by you and the chairs and coordinator of ENIGMA MDD (please let us know if you need the credentials): \<to be finished\>
+Once you finished the protocol, please upload the entire *PRS* folder into your site folder in MediaFlux, which is only accessible by you and the chairs and coordinator of ENIGMA MDD (please let us know if you need the credentials). \<to be finished\>
