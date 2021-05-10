@@ -70,6 +70,17 @@ Rscript util/create_dummypheno.R data/TOY_TARGET_DATA.bim
 
 A file will be created as *data/dummy\_pheno.txt .*
 
+#### 1000genome plink files
+
+If your sample has less than 1000 participants, it is better to use the
+1000genome data for central European sample.
+
+You can download the plink files from
+[here](https://datasync.ed.ac.uk/index.php/s/MR4ZkvBbUcswO8d). Password:
+enigma. Stored the files in the *data* folder.
+
+\!\!\! The PRS script will detect if your sample is too small (N\<1000).
+
 -----
 
 ### Run PRSice
