@@ -56,7 +56,7 @@ install.packages('optparse')
 At least three files should be included with suffixes: .bim, .bed, .fam.
 Please make sure genetic data is under genome build hg19/GRCh37.
 
-If you are not sure, the PRS pipeline will check automatically.
+If you are not sure, simply run the PRS pipeline and it will check automatically.
 
 
 #### Phenotype file
