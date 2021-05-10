@@ -626,7 +626,8 @@ body {
 <hr />
 <h2 id="file-preparation">File preparation</h2>
 <h4 id="plink-format-genetic-data">Plink-format genetic data</h4>
-<p>At least three files should be included with suffixes: .bim, .bed, .fam.</p>
+<p>At least three files should be included with suffixes: .bim, .bed, .fam. Please make sure genetic data is under genome build hg19/GRCh37.</p>
+<p>If you are not sure, the PRS pipeline will check automatically.</p>
 <h4 id="phenotype-file">Phenotype file</h4>
 <p>Create a dummy file with the .bim file. Use command given below.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="ex">Rscript</span> util/create_dummypheno.R <span class="op">&lt;</span>.bim file location<span class="op">&gt;</span></a></code></pre></div>
