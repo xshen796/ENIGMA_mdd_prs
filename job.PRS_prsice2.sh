@@ -12,6 +12,9 @@ plink_file=$parameterD
 # Set up   --------------------------------------------------------------
 mkdir -p PRS
 
+
+############################## All SNPs #################################
+
 # Original summary statistics  ------------------------------------------
 
 for file in $(ls summstats/*.summstats)
@@ -68,11 +71,68 @@ do
 	    -o PRS/${summstats_basename}_sbayesr
 	fi
 
-
-    bash script/PREP_PRS/PRS_prsice2_SBayesR.sh -g $plink_file \
-    -s $summstats_filename \
-    -o PRS/${summstats_basename}_sbayesr
 done
 
 
+####################### SNPs across studies ############################
+
+# Original summary statistics  ------------------------------------------
+
+for file in $(ls summstats/*.summstats)
+do
+    summstats_filename=$file
+    summstats_basename=$(basename ${summstats_filename} .summstats)
+
+   ### Check if there's already an output
+   if [ -f "PRS/${summstats_basename}_restrictSNP_orig.all_scores" ]
+   then
+      echo "${summstats_basename}_restrictSNP_orig.all_scores has been generated in the PRS folder\nSkip the process"
+      continue
+   fi
+
+    ### Based on whether there is an .valid output:
+	if [ -f "PRS/${summstats_basename}_restrictSNP_orig.valid" ]; then
+	    bash script/PREP_PRS/PRS_prsice2_TandC_validls.sh -g $plink_file \
+	    -s $summstats_filename \
+	    -l PRS/${summstats_basename}_restrictSNP_orig.valid \
+	    -o PRS/${summstats_basename}_restrictSNP_orig
+	else
+	    bash script/PREP_PRS/PRS_prsice2_TandC.sh -g $plink_file \
+            -l data/SNP_list.txt \
+	    -s $summstats_filename \
+	    -o PRS/${summstats_basename}_restrictSNP_orig
+	fi
+
+done
+
+
+# SbayesR summary statistics    ----------------------------------------
+
+for file in $(ls summstats/*.sbayesr_summstats)
+do
+    summstats_filename=$file
+    summstats_basename=$(basename ${summstats_filename} .sbeyesr_summstats)
+
+   ### Check if there's already an output
+   if [ -f "${summstats_basename}_restrictSNP_sbayesr.all_scores" ]
+   then
+      echo "${summstats_basename}_restrictSNP_sbayesr.all_scores has been generated in the PRS folder\nSkip the process"
+      continue
+   fi
+
+
+    ### Based on whether there is an .valid output:
+	if [ -f "PRS/${summstats_basename}_restrictSNP_sbayesr.valid" ]; then
+	    bash script/PREP_PRS/PRS_prsice2_SBayesR_validls.sh -g $plink_file \
+	    -s $summstats_filename \
+	    -l PRS/${summstats_basename}_restrictSNP_sbayesr.valid \
+	    -o PRS/${summstats_basename}_restrictSNP_sbayesr
+	else
+	    bash script/PREP_PRS/PRS_prsice2_SBayesR.sh -g $plink_file \
+            -l data/SNP_list.txt \
+	    -s $summstats_filename \
+	    -o PRS/${summstats_basename}_restrictSNP_sbayesr
+	fi
+
+done
 
