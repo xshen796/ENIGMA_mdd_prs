@@ -35,6 +35,10 @@ output_prefix=$parameterO
 
 # PRSice script:
 
+COUNT=`wc -l $plink_files.fam | awk '{print $1}'`
+if [ ${COUNT} -gt 1000 ]
+   then
+
 Rscript $prsice_R_file \
     --prsice $prsice_binary_file \
     --base $gwas_summstats \
@@ -49,3 +53,24 @@ Rscript $prsice_R_file \
     --fastscore \
     --all-score \
     --out $output_prefix
+
+   else
+
+Rscript $prsice_R_file \
+    --prsice $prsice_binary_file \
+    --base $gwas_summstats \
+    --target $plink_files \
+    --thread 3 \
+    --stat BETA \
+    --ld data/1000g_CEU_plink \
+    --binary-target T \
+    --pheno $phenotype_file \
+    --pheno-col $pheno_name \
+    --clump-r2 0.1 \
+    --bar-levels 0.00000005,0.000001,0.0001,0.001,0.01,0.05,0.1,0.2,0.5,1 \
+    --fastscore \
+    --all-score \
+    --out $output_prefix
+
+fi
+

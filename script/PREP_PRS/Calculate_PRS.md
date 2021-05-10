@@ -1,7 +1,7 @@
 Calculate PRS
 ================
 X Shen
-03 May, 2021
+10 May, 2021
 
 For more information about PRSice 2.0, see its [wiki
 page](http://prsice.info/)

@@ -32,8 +32,11 @@ pheno_name='dummy_pheno'
 output_prefix=$parameterO 
 
 
-
 # PRSice script:
+
+COUNT=`wc -l $plink_files.fam | awk '{print $1}'`
+if [ ${COUNT} -gt 1000 ]
+   then
 
 $prsice_R_file \
     --prsice $(which PRSice_linux) \
@@ -48,4 +51,25 @@ $prsice_R_file \
     --bar-levels 1 \
     --fastscore \
     --all-score \
+    --out $output_prefix     
+
+   else
+
+$prsice_R_file \
+    --prsice $(which PRSice_linux) \
+    --base $gwas_summstats \
+    --target $plink_files \
+    --thread 3 \
+    --stat BETA \
+    --ld data/1000g_CEU_plink \
+    --binary-target T \
+    --pheno $phenotype_file \
+    --pheno-col $pheno_name \
+    --no-clump \
+    --bar-levels 1 \
+    --fastscore \
+    --all-score \
     --out $output_prefix
+
+fi
+
