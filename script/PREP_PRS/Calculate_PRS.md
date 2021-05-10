@@ -73,7 +73,7 @@ A file will be created as *data/dummy\_pheno.txt .*
 #### 1000genome plink files
 
 If your sample has less than 1000 participants, it is better to use the
-1000genome data for central European sample.
+1000genome data as LD reference.
 
 You can download the plink files from
 [here](https://datasync.ed.ac.uk/index.php/s/MR4ZkvBbUcswO8d). Password:
