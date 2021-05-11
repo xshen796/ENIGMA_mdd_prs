@@ -1,7 +1,7 @@
 Calculate PRS
 ================
 X Shen
-10 May, 2021
+11 May, 2021
 
 For more information about PRSice 2.0, see its [wiki
 page](http://prsice.info/)
@@ -63,13 +63,13 @@ automatically.
 Create a dummy file with the .bim file. Use command given below.
 
 ``` bash
-Rscript util/create_dummypheno.R <.bim file location>
+Rscript util/create_dummypheno.R --bim <.bim file location>
 ```
 
 Here is an example using plink data in the *data* folder:
 
 ``` bash
-Rscript util/create_dummypheno.R data/TOY_TARGET_DATA.bim
+Rscript util/create_dummypheno.R --bim data/TOY_TARGET_DATA.bim
 ```
 
 A file will be created as *data/dummy\_pheno.txt .*

@@ -601,7 +601,7 @@ body {
 <body>
 
 <h1 id="calculate-prs">Calculate PRS</h1>
-<p>X Shen 10 May, 2021</p>
+<p>X Shen 11 May, 2021</p>
 <p>For more information about PRSice 2.0, see its <a href="http://prsice.info/">wiki page</a></p>
 <hr />
 <h2 id="set-up-a-local-copy-of-the-github-repository">Set up a local copy of the github repository</h2>
@@ -630,9 +630,9 @@ body {
 <p>If you are not sure, simply run the PRS pipeline and it will check automatically.</p>
 <h4 id="phenotype-file">Phenotype file</h4>
 <p>Create a dummy file with the .bim file. Use command given below.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="ex">Rscript</span> util/create_dummypheno.R <span class="op">&lt;</span>.bim file location<span class="op">&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="ex">Rscript</span> util/create_dummypheno.R --bim <span class="op">&lt;</span>.bim file location<span class="op">&gt;</span></a></code></pre></div>
 <p>Here is an example using plink data in the <em>data</em> folder:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="ex">Rscript</span> util/create_dummypheno.R data/TOY_TARGET_DATA.bim</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="ex">Rscript</span> util/create_dummypheno.R --bim data/TOY_TARGET_DATA.bim</a></code></pre></div>
 <p>A file will be created as <em>data/dummy_pheno.txt .</em></p>
 <h4 id="1000genome-plink-files">1000genome plink files</h4>
 <p>If your sample has less than 1000 participants, it is better to use the 1000genome data as LD reference.</p>
