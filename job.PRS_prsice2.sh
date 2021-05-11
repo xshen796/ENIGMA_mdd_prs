@@ -8,6 +8,38 @@ done
 
 plink_file=$parameterD
 
+# Check genome build ----------------------------------------------------
+
+# Download hg19 genome build data and check
+
+if [ -f "data/snp151Common.txt" ]
+   then
+      wget http://hgdownload.soe.ucsc.edu/goldenPath/hg19/database/snp151Common.txt.gz
+      gunzip snp151Common.txt.gz
+      mv snp151Common.txt data/
+fi
+
+if [ -f "data/check_genome_build.txt" ]
+   then
+      Rscript util/check_genome_build.R --bim $parameterD
+fi
+
+# More than 25% SNPs not presented in the reference file or 
+# more than 10% presented SNPs in the wrong location 
+# then exit the script
+
+P_present=`cat data/check_genome_build.txt | grep 'present' |awk '{print $1}' `
+Loc_match=`cat data/check_genome_build.txt | grep 'loc_matched' |awk '{print $1}'`
+
+if (( $(bc <<< "$P_present<0.85") )); then
+    echo 'Local genetic data is under an incompatible genome build'
+    exit 1
+fi
+
+if (( $(bc <<< "Loc_match<0.9") )) ; then
+    echo 'Local genetic data is under an incompatible genome build'
+    exit 1
+fi
 
 # Set up   --------------------------------------------------------------
 mkdir -p PRS
