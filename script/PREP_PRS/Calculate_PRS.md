@@ -1,7 +1,7 @@
 Calculate PRS
 ================
 X Shen
-11 May, 2021
+12 May, 2021
 
 For more information about PRSice 2.0, see its [wiki
 page](http://prsice.info/)
@@ -79,9 +79,19 @@ A file will be created as *data/dummy\_pheno.txt .*
 If your sample has less than 1000 participants, it is better to use the
 1000genome data as LD reference.
 
-You can download the plink files from
-[here](https://datasync.ed.ac.uk/index.php/s/MR4ZkvBbUcswO8d). Password:
-enigma. Stored the files in the *data* folder.
+You can download the plink files and store in the *data* folder. Use the
+command below. You’ll be asked to give a password for each file.
+Password: enigma.
+
+``` bash
+cd data
+
+curl -u "NvBAVLFOZP7o6kC" "https://datasync.ed.ac.uk/public.php/webdav" -o 1000g_CEU_plink.fam
+curl -u "yk7HILluLWfUdjQ" "https://datasync.ed.ac.uk/public.php/webdav" -o 1000g_CEU_plink.bim
+curl -u "QWagF7h7qJcOK3D" "https://datasync.ed.ac.uk/public.php/webdav" -o 1000g_CEU_plink.bed
+
+cd ../
+```
 
 \!\!\! The PRS script will detect if your sample is too small (N\<1000).
 
