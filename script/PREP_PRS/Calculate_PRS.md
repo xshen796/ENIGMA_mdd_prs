@@ -37,6 +37,7 @@ Open R, test if these packages are installed.
 ``` r
 library(dplyr)
 library(optparse)
+library(data.table)
 ```
 
 If R gives an error message, install the package(s) using:
@@ -44,6 +45,7 @@ If R gives an error message, install the package(s) using:
 ``` r
 install.packages('dplyr')
 install.packages('optparse')
+install.packages('data.table')
 ```
 
 -----
