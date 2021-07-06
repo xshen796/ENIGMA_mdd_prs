@@ -77,7 +77,8 @@ Example:
 In this example, two PRSs will be generated. For example, the first one
 will be generated using SNPs from the ‘data/SNP\_all\_hardlist’ file,
 sumstats from the ‘data/summstats/mdd\_summstats.example’ file and
-clumping+thresholding method.
+clumping+thresholding method. You could also find an example file
+[here](https://github.com/xshen796/ENIGMA_mdd_prs/tree/main/data/example.input.txt).
 
 This PRSs will be stored in the
 ‘data/SNP\_all\_hardlist\_mdd\_summstats.example\_CT.all\_score’ file.
