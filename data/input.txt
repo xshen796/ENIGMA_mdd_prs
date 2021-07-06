@@ -1,0 +1,2 @@
+data/SNP_all_hardlist	data/summstats/mdd_summstats.example	CT
+data/SNP_all_hardlist	data/summstats/mdd_summstats.example	sbayesr

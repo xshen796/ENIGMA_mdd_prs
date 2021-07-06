@@ -39,7 +39,7 @@ if [ ${COUNT} -gt 1000 ]
    then
 
 $prsice_R_file \
-    --prsice $(which PRSice_linux) \
+    --prsice $prsice_binary_file \
     --base $gwas_summstats \
     --target $plink_files \
     --thread 3 \
@@ -56,7 +56,7 @@ $prsice_R_file \
    else
 
 $prsice_R_file \
-    --prsice $(which PRSice_linux) \
+    --prsice $prsice_binary_file \
     --base $gwas_summstats \
     --target $plink_files \
     --thread 3 \

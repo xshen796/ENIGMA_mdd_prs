@@ -601,8 +601,8 @@ body {
 <body>
 
 <h1 id="calculate-prs">Calculate PRS</h1>
-<p>X Shen 12 May, 2021</p>
-<p>For more information about PRSice 2.0, see its <a href="http://prsice.info/">wiki page</a></p>
+<p>X Shen 06 July, 2021</p>
+<p>For more information about PRSice 2.0, see its <a href="http://prsice.info/">wiki page</a>. For GCTA, see <a href="https://cnsgenomics.com/software/gcta">wiki page</a>.</p>
 <hr />
 <h2 id="set-up-a-local-copy-of-the-github-repository">Set up a local copy of the github repository</h2>
 <p>Clone files:</p>
@@ -615,6 +615,7 @@ body {
 <p>R libraries required:</p>
 <ul>
 <li>dplyr</li>
+<li>data.table</li>
 <li>optparse</li>
 </ul>
 <p>Open R, test if these packages are installed.</p>
@@ -631,10 +632,10 @@ body {
 <p>At least three files should be included with suffixes: .bim, .bed, .fam. Please make sure genetic data is under genome build hg19/GRCh37.</p>
 <p>If you are not sure, simply run the PRS pipeline and it will check automatically.</p>
 <h4 id="phenotype-file">Phenotype file</h4>
-<p>Create a dummy file with the .bim file. Use command given below.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="ex">Rscript</span> util/create_dummypheno.R --bim <span class="op">&lt;</span>.bim file location<span class="op">&gt;</span></a></code></pre></div>
+<p>Create a dummy file with the .fam file. Use command given below.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="ex">Rscript</span> util/create_dummypheno.R --fam <span class="op">&lt;</span>.bim file location<span class="op">&gt;</span></a></code></pre></div>
 <p>Here is an example using plink data in the <em>data</em> folder:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="ex">Rscript</span> util/create_dummypheno.R --bim data/TOY_TARGET_DATA.bim</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="ex">Rscript</span> util/create_dummypheno.R --fam data/1000G_eur_chr22.fam</a></code></pre></div>
 <p>A file will be created as <em>data/dummy_pheno.txt .</em></p>
 <h4 id="1000genome-plink-files">1000genome plink files</h4>
 <p>If your sample has less than 1000 participants, it is better to use the 1000genome data as LD reference.</p>
@@ -652,7 +653,7 @@ body {
 <p>Run the job file to generate all PRS using the command below.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="fu">bash</span> job.PRS_prsice2.sh -d <span class="op">&lt;</span>base name for plink-format files<span class="op">&gt;</span></a></code></pre></div>
 <p>Here is an example using plink data in the <em>data</em> folder:</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="fu">bash</span> job.PRS_prsice2.sh -d data/TOY_TARGET_DATA</a></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="fu">bash</span> job.PRS_prsice2.sh -d data/1000G_eur_chr22</a></code></pre></div>
 <p><strong>!!</strong> If you see an error about duplicated variants looking like below, run the above command again. The script will pick up the valid SNP list when re-calculating PRS.</p>
 <blockquote>
 <p>Error: A total of 7456 duplicated SNP ID detected out of 5958288 input SNPs! …</p>

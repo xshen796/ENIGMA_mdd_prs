@@ -13,13 +13,15 @@ option_list <- list(
 args = commandArgs(trailingOnly=TRUE)
 opt <- parse_args(OptionParser(option_list=option_list), args=args)
 
-bim.file=opt$bim
+bim.file=paste0(opt$bim,'.bim')
+base.name=opt$bim %>% basename
 
 # Load data ----------------------------------------------------------------
 snp151common = fread('data/snp151Common.txt',stringsAsFactors=F,header=F) %>%
     select(CHR.ref=V2,BP.ref=V4,RSID=V5) %>%
     mutate(CHR.ref=gsub('chr','',CHR.ref)) %>% 
     filter(CHR.ref!='X',CHR.ref!='Y') %>%
+    filter(nchar(CHR.ref)<3) %>% 
     mutate(CHR.ref=as.numeric(CHR.ref))
 
 local.bim = fread(bim.file,stringsAsFactors=F,header=F) %>%
@@ -45,7 +47,8 @@ if ((n.rsID_present/n.rsID>0.85)&(n.chrbp_match/n.rsID_present>0.9)){
     cat ('Local genetic data is using an imcompatible genome build.\n')
 }
 
-write.table(output.table,file='data/check_genome_build.txt',col.names=F,row.names=F,sep='\t',quote=F)
+write.table(output.table,file=paste0('data/check_genome_build_',base.name,'.txt'),
+            col.names=F,row.names=F,sep='\t',quote=F)
   
 
 
