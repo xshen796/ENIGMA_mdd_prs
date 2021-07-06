@@ -9,3 +9,7 @@ Change SNP names from CHR:BP to RS format: https://github.com/xshen796/ENIGMA_md
 
 ## Polygenic risk scores
 Create polygenic risk scores: https://github.com/xshen796/ENIGMA_mdd_prs/blob/main/script/PREP_PRS/Calculate_PRS.md
+
+
+## Set up a polygenic risk score project
+For project leaders: https://github.com/xshen796/ENIGMA_mdd_prs/blob/main/script/PREP_PRS/Set_up_a_PRSproject.md
