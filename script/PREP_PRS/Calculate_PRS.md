@@ -133,6 +133,6 @@ Check if all files present in the *PRS* folder. A checklist can be found
 
 ### Upload PRS and supportive files
 
-Upload the entire *PRS* folder to the medflix server. See a step-by-step
+Upload the entire *PRS* folder to the mediaflux server. See a step-by-step
 guide
 [here](https://github.com/xshen796/ENIGMA_mdd_prs/blob/main/docs/Accessing%20your%20folder%20on%20MediaFlux%20ENIGMA%20MDD%20storage%20system%20updated%20Aug2020%5B2%5D.pdf).
