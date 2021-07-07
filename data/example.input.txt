@@ -1,2 +1,8 @@
 data/SNP_all_hardlist	data/summstats/mdd_summstats.example	CT
 data/SNP_all_hardlist	data/summstats/mdd_summstats.example	sbayesr
+data/SNP_all_hardlist	data/summstats/bmi_summstats	CT
+data/SNP_all_softlist	data/summstats/bmi_summstats	CT
+data/SNP_all_hardlist	data/summstats/crp_summstats	CT
+data/SNP_all_softlist	data/summstats/crp_summstats	CT
+data/SNP_all_hardlist	data/summstats/triglycerides_summstats	CT
+data/SNP_all_softlist	data/summstats/triglycerides_summstats	CT
