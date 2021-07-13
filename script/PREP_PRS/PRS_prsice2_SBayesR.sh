@@ -49,6 +49,7 @@ $prsice_R_file \
     --pheno-col $pheno_name \
     --no-clump \
     --bar-levels 1 \
+    --print-snp \
     --fastscore \
     --all-score \
     --out $output_prefix     
@@ -67,6 +68,7 @@ $prsice_R_file \
     --pheno-col $pheno_name \
     --no-clump \
     --bar-levels 1 \
+    --print-snp \
     --fastscore \
     --all-score \
     --out $output_prefix

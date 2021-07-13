@@ -25,6 +25,17 @@ echo '------------------------   START    ------------------------' >> PRS/log.t
 echo $(date) >> PRS/log.txt
 base_file=$(basename $plink_file)
 
+# Check list for files to expect  ---------------------------------------
+
+if [ ! -f "data/local_checklist" ]
+   then
+      Rscript util/create_checkls.R --plink $parameterD
+      echo 'DONE: check list created in data/local_checklist' >> PRS/log.txt
+   else
+      echo 'DONE: data/local_checklist already exists' >> PRS/log.txt
+fi
+
+
 # Check genome build ----------------------------------------------------
 
 # Download hg19 genome build data and check
@@ -92,7 +103,6 @@ fi
 while read -r a b c || [ -n "$a" ]; do
 
    ### Read inputs   
-
    snplist=$a
    summstats_filename=$b
    summstats_basename=$(basename ${summstats_filename} .summstats)
@@ -177,5 +187,22 @@ while read -r a b c || [ -n "$a" ]; do
          exit 1
      fi
        
-
 done < data/input.txt
+
+
+############################## Check outputs #################################
+
+Rscript util/check_files_toreturn.R --checklist PRS/local_checklist
+
+N_missing_score=`wc -l data/missing_score | awk '{print $1}' `
+
+if [ $N_missing_score = 0 ]; then
+      printf 'FINISH: all scores generated\n'
+      echo 'DONE: all scores generated' >> PRS/log.txt
+    else
+      printf 'WARNING: following scores are not generated\n'
+      cat data/missing_score
+      echo 'FAIL: scores not generated:' >> PRS/log.txt
+      cat data/missing_score >> PRS/log.txt
+fi
+

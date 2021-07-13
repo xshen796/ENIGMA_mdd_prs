@@ -55,6 +55,7 @@ Rscript $prsice_R_file \
     --clump-r2 0.1 \
     --bar-levels 0.00000005,0.000001,0.0001,0.001,0.01,0.05,0.1,0.2,0.5,1 \
     --fastscore \
+    --print-snp \
     --all-score \
     --extract $ls_snp \
     --out $output_prefix
@@ -74,6 +75,7 @@ Rscript $prsice_R_file \
     --clump-r2 0.1 \
     --bar-levels 0.00000005,0.000001,0.0001,0.001,0.01,0.05,0.1,0.2,0.5,1 \
     --fastscore \
+    --print-snp \
     --all-score \
     --extract $ls_snp \
     --out $output_prefix

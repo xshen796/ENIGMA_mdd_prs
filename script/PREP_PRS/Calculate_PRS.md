@@ -1,7 +1,11 @@
 Calculate PRS
 ================
 X Shen
-06 July, 2021
+13 July, 2021
+
+This pipeline calculates PRS for the ENIGMA MDD PRS projects. There are
+a total of 6 steps in the protocol. Please use a linux machine for the
+pipeline.
 
 For more information about PRSice 2.0, see its [wiki
 page](http://prsice.info/). For GCTA, see [wiki
@@ -80,12 +84,12 @@ A file will be created as *data/dummy\_pheno.txt .*
 
 #### 1000genome plink files
 
-If your sample has less than 1000 participants, it is better to use the
-1000genome data as LD reference.
+If your sample has less than 1000 participants, use the following steps
+to download the 1000genome data to use as LD reference.
 
 You can download the plink files and store in the *data* folder. Use the
 command below. You’ll be asked to give a password for each file.
-Password: enigma.
+**Password: enigma**.
 
 ``` bash
 cd data
@@ -115,24 +119,24 @@ Here is an example using plink data in the *data* folder:
 bash job.PRS_prsice2.sh -d data/1000G_eur_chr22
 ```
 
-**\!\!** If you see an error about duplicated variants looking like
-below, run the above command again. The script will pick up the valid
-SNP list when re-calculating PRS.
-
-> Error: A total of 7456 duplicated SNP ID detected out of 5958288 input
-> SNPs\! …
-
 -----
 
 ### A checklist for output files
 
-Check if all files present in the *PRS* folder. A checklist can be found
-[here](https://github.com/xshen796/ENIGMA_mdd_prs/blob/main/script/PREP_PRS/CheckList_output.md).
+The pipeline checks if all files present in the *PRS* folder. A
+checklist for all files necessary for downstream analysis can be found
+in file *PRS/local\_checklist*. Missing files are listed in
+*PRS/missing\_score*.
+
+If all CT method PRS are missing (for example, …CT.all\_score, …CT.snp),
+it is likely that you haven’t downloaded the 1000G CEU plink files in
+the data folder. Please check the ‘1000genome plink files’ section in
+this protocol.
 
 -----
 
 ### Upload PRS and supportive files
 
-Upload the entire *PRS* folder to the mediaflux server. See a step-by-step
+Upload the entire *PRS* folder to the medflix server. See a step-by-step
 guide
 [here](https://github.com/xshen796/ENIGMA_mdd_prs/blob/main/docs/Accessing%20your%20folder%20on%20MediaFlux%20ENIGMA%20MDD%20storage%20system%20updated%20Aug2020%5B2%5D.pdf).

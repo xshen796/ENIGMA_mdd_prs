@@ -601,7 +601,8 @@ body {
 <body>
 
 <h1 id="calculate-prs">Calculate PRS</h1>
-<p>X Shen 06 July, 2021</p>
+<p>X Shen 13 July, 2021</p>
+<p>This pipeline calculates PRS for the ENIGMA MDD PRS projects. There are a total of 6 steps in the protocol. Please use a linux machine for the pipeline.</p>
 <p>For more information about PRSice 2.0, see its <a href="http://prsice.info/">wiki page</a>. For GCTA, see <a href="https://cnsgenomics.com/software/gcta">wiki page</a>.</p>
 <hr />
 <h2 id="set-up-a-local-copy-of-the-github-repository">Set up a local copy of the github repository</h2>
@@ -638,8 +639,8 @@ body {
 <div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="ex">Rscript</span> util/create_dummypheno.R --fam data/1000G_eur_chr22.fam</a></code></pre></div>
 <p>A file will be created as <em>data/dummy_pheno.txt .</em></p>
 <h4 id="1000genome-plink-files">1000genome plink files</h4>
-<p>If your sample has less than 1000 participants, it is better to use the 1000genome data as LD reference.</p>
-<p>You can download the plink files and store in the <em>data</em> folder. Use the command below. You’ll be asked to give a password for each file. Password: enigma.</p>
+<p>If your sample has less than 1000 participants, use the following steps to download the 1000genome data to use as LD reference.</p>
+<p>You can download the plink files and store in the <em>data</em> folder. Use the command below. You’ll be asked to give a password for each file. <strong>Password: enigma</strong>.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="bu">cd</span> data</a>
 <a class="sourceLine" id="cb7-2" data-line-number="2"></a>
 <a class="sourceLine" id="cb7-3" data-line-number="3"><span class="ex">curl</span> -u <span class="st">&quot;NvBAVLFOZP7o6kC&quot;</span> <span class="st">&quot;https://datasync.ed.ac.uk/public.php/webdav&quot;</span> -o 1000g_CEU_plink.fam</a>
@@ -654,13 +655,10 @@ body {
 <div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="fu">bash</span> job.PRS_prsice2.sh -d <span class="op">&lt;</span>base name for plink-format files<span class="op">&gt;</span></a></code></pre></div>
 <p>Here is an example using plink data in the <em>data</em> folder:</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="fu">bash</span> job.PRS_prsice2.sh -d data/1000G_eur_chr22</a></code></pre></div>
-<p><strong>!!</strong> If you see an error about duplicated variants looking like below, run the above command again. The script will pick up the valid SNP list when re-calculating PRS.</p>
-<blockquote>
-<p>Error: A total of 7456 duplicated SNP ID detected out of 5958288 input SNPs! …</p>
-</blockquote>
 <hr />
 <h3 id="a-checklist-for-output-files">A checklist for output files</h3>
-<p>Check if all files present in the <em>PRS</em> folder. A checklist can be found <a href="https://github.com/xshen796/ENIGMA_mdd_prs/blob/main/script/PREP_PRS/CheckList_output.md">here</a>.</p>
+<p>The pipeline checks if all files present in the <em>PRS</em> folder. A checklist for all files necessary for downstream analysis can be found in file <em>PRS/local_checklist</em>. Missing files are listed in <em>PRS/missing_score</em>.</p>
+<p>If all CT method PRS are missing (for example, …CT.all_score, …CT.snp), it is likely that you haven’t downloaded the 1000G CEU plink files in the data folder. Please check the ‘1000genome plink files’ section in this protocol.</p>
 <hr />
 <h3 id="upload-prs-and-supportive-files">Upload PRS and supportive files</h3>
 <p>Upload the entire <em>PRS</em> folder to the medflix server. See a step-by-step guide <a href="https://github.com/xshen796/ENIGMA_mdd_prs/blob/main/docs/Accessing%20your%20folder%20on%20MediaFlux%20ENIGMA%20MDD%20storage%20system%20updated%20Aug2020%5B2%5D.pdf">here</a>.</p>

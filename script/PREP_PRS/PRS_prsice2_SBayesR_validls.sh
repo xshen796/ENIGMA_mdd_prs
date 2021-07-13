@@ -55,6 +55,7 @@ $prsice_R_file \
     --no-clump \
     --bar-levels 1 \
     --fastscore \
+    --print-snp \
     --all-score \
     --extract $ls_snp \
     --out $output_prefix
@@ -74,6 +75,7 @@ $prsice_R_file \
     --no-clump \
     --bar-levels 1 \
     --fastscore \
+    --print-snp \
     --all-score \
     --extract $ls_snp \
     --out $output_prefix
