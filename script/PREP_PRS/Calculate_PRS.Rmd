@@ -62,6 +62,16 @@ At least three files should be included with suffixes: .bim, .bed, .fam. Please 
 
 If you are not sure, simply run the PRS pipeline and it will check automatically.
 
+#### GWAS sumstats
+
+Please download all GWAS sumstats using the following commands:
+
+```{bash, eval=F}
+curl -u "MxG9YdrVLc29St7" "https://datasync.ed.ac.uk/public.php/webdav" -o data/sumstats.tar.gz
+tar -xvf data/sumstats.tar.gz -C data/
+```
+
+
 #### Phenotype file
 
 Create a dummy file with the .fam file. Use command given below.
@@ -85,13 +95,8 @@ If your sample has less than 1000 participants, use the following steps to downl
 You can download the plink files and store in the *data* folder. Use the command below. You'll be asked to give a password for each file. **Password: enigma**.
 
 ```{bash, eval=F}
-cd data
-
-curl -u "NvBAVLFOZP7o6kC" "https://datasync.ed.ac.uk/public.php/webdav" -o 1000g_CEU_plink.fam
-curl -u "yk7HILluLWfUdjQ" "https://datasync.ed.ac.uk/public.php/webdav" -o 1000g_CEU_plink.bim
-curl -u "QWagF7h7qJcOK3D" "https://datasync.ed.ac.uk/public.php/webdav" -o 1000g_CEU_plink.bed
-
-cd ../
+curl -u "ZtQCeM3yoDdPg6H" "https://datasync.ed.ac.uk/public.php/webdav" -o data/1000G.tar.gz
+tar -xvf data/1000G.tar.gz -C data/
 ```
 
 !!! The PRS script will detect if your sample is too small (N\<1000).

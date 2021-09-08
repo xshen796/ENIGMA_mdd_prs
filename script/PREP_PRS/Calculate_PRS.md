@@ -1,7 +1,7 @@
 Calculate PRS
 ================
 X Shen
-13 July, 2021
+08 September, 2021
 
 This pipeline calculates PRS for the ENIGMA MDD PRS projects. There are
 a total of 6 steps in the protocol. Please use a linux machine for the
@@ -66,6 +66,16 @@ Please make sure genetic data is under genome build hg19/GRCh37.
 If you are not sure, simply run the PRS pipeline and it will check
 automatically.
 
+#### GWAS sumstats
+
+Please download all GWAS sumstats using the following
+commands:
+
+``` bash
+curl -u "MxG9YdrVLc29St7" "https://datasync.ed.ac.uk/public.php/webdav" -o data/sumstats.tar.gz
+tar -xvf data/sumstats.tar.gz -C data/
+```
+
 #### Phenotype file
 
 Create a dummy file with the .fam file. Use command given below.
@@ -89,16 +99,12 @@ to download the 1000genome data to use as LD reference.
 
 You can download the plink files and store in the *data* folder. Use the
 command below. You’ll be asked to give a password for each file.
-**Password: enigma**.
+**Password:
+enigma**.
 
 ``` bash
-cd data
-
-curl -u "NvBAVLFOZP7o6kC" "https://datasync.ed.ac.uk/public.php/webdav" -o 1000g_CEU_plink.fam
-curl -u "yk7HILluLWfUdjQ" "https://datasync.ed.ac.uk/public.php/webdav" -o 1000g_CEU_plink.bim
-curl -u "QWagF7h7qJcOK3D" "https://datasync.ed.ac.uk/public.php/webdav" -o 1000g_CEU_plink.bed
-
-cd ../
+curl -u "ZtQCeM3yoDdPg6H" "https://datasync.ed.ac.uk/public.php/webdav" -o data/1000G.tar.gz
+tar -xvf data/1000G.tar.gz -C data/
 ```
 
 \!\!\! The PRS script will detect if your sample is too small (N\<1000).

@@ -62,7 +62,7 @@ $prsice_R_file \
     --target $plink_files \
     --thread 3 \
     --stat BETA \
-    --ld data/1000g_CEU_plink \
+    --ld data/1000G/1000g_CEU_plink \
     --binary-target T \
     --pheno $phenotype_file \
     --pheno-col $pheno_name \
