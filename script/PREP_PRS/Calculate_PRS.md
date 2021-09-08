@@ -68,8 +68,9 @@ automatically.
 
 #### GWAS sumstats
 
-Please download all GWAS sumstats using the following
-commands:
+Please download all GWAS sumstats using the following commands.
+**Password:
+enigma**
 
 ``` bash
 curl -u "MxG9YdrVLc29St7" "https://datasync.ed.ac.uk/public.php/webdav" -o data/sumstats.tar.gz
