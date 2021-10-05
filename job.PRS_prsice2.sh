@@ -78,12 +78,12 @@ echo 'DONE: check genome build' >> PRS/log.txt
 
 # Calculate GRM   ----------------------------------------------------
 
-if [ ! -f "PRS/${base_file}.grm.id" ]
+if [ ! -f "PRS/${base_file}.grm.bin" ]
   then
 	util/gcta_1.93.2beta/gcta64 --bfile $plink_file --maf 0.01 --make-grm  --out PRS/$base_file
 fi
 
-if [ -f "PRS/${base_file}.grm.id" ]
+if [ -f "PRS/${base_file}.grm.bin" ]
    then
       echo 'DONE: generate GRM' >> PRS/log.txt
    else
@@ -99,6 +99,11 @@ fi
 # Read inputs from file 'data/input.txt'. 
 # Each line includes three inputs: 1) file name for SNP list [a], 2) file name for summstats [b] and 3) whether the summstats is a C+T method summary stats or an SBayesR summstats [c].
 
+# Unzip SNP lists
+if [ -f "data/site*.gz" ]
+   then
+	gunzip data/site*.gz
+fi
 
 while read -r a b c || [ -n "$a" ]; do
 
@@ -202,7 +207,7 @@ if [ $N_missing_score = 0 ]; then
     else
       printf 'WARNING: following scores are not generated\n'
       cat data/missing_score
-      echo 'FAIL: scores not generated:' >> PRS/log.txt
+      echo 'FAIL: filess not generated:' >> PRS/log.txt
       cat data/missing_score >> PRS/log.txt
 fi
 
