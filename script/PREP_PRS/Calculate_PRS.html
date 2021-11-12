@@ -601,7 +601,7 @@ body {
 <body>
 
 <h1 id="calculate-prs">Calculate PRS</h1>
-<p>X Shen 08 September, 2021</p>
+<p>X Shen 12 November, 2021</p>
 <p>This pipeline calculates PRS for the ENIGMA MDD PRS projects. There are a total of 6 steps in the protocol. Please use a linux machine for the pipeline.</p>
 <p>For more information about PRSice 2.0, see its <a href="http://prsice.info/">wiki page</a>. For GCTA, see <a href="https://cnsgenomics.com/software/gcta">wiki page</a>.</p>
 <hr />
@@ -622,11 +622,13 @@ body {
 <p>Open R, test if these packages are installed.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">library</span>(dplyr)</a>
 <a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw">library</span>(optparse)</a>
-<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="kw">library</span>(data.table)</a></code></pre></div>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="kw">library</span>(data.table)</a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="kw">library</span>(readr)</a></code></pre></div>
 <p>If R gives an error message, install the package(s) using:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="st">'dplyr'</span>)</a>
 <a class="sourceLine" id="cb4-2" data-line-number="2"><span class="kw">install.packages</span>(<span class="st">'optparse'</span>)</a>
-<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="kw">install.packages</span>(<span class="st">'data.table'</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb4-3" data-line-number="3"><span class="kw">install.packages</span>(<span class="st">'data.table'</span>)</a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"><span class="kw">install.packages</span>(<span class="st">'readr'</span>)</a></code></pre></div>
 <hr />
 <h2 id="file-preparation">File preparation</h2>
 <h4 id="plink-format-genetic-data">Plink-format genetic data</h4>
@@ -634,7 +636,7 @@ body {
 <p>If you are not sure, simply run the PRS pipeline and it will check automatically.</p>
 <h4 id="gwas-sumstats">GWAS sumstats</h4>
 <p>Please download all GWAS sumstats using the following commands. <strong>Password: enigma</strong></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="ex">curl</span> -u <span class="st">&quot;MxG9YdrVLc29St7&quot;</span> <span class="st">&quot;https://datasync.ed.ac.uk/public.php/webdav&quot;</span> -o data/sumstats.tar.gz</a>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="ex">curl</span> -u <span class="st">&quot;alXcWcVMeEnsKIj&quot;</span> <span class="st">&quot;https://datasync.ed.ac.uk/public.php/webdav&quot;</span> -o data/sumstats.tar.gz</a>
 <a class="sourceLine" id="cb5-2" data-line-number="2"><span class="fu">tar</span> -xvf data/sumstats.tar.gz -C data/</a></code></pre></div>
 <h4 id="phenotype-file">Phenotype file</h4>
 <p>Create a dummy file with the .fam file. Use command given below.</p>

@@ -1,7 +1,7 @@
 Calculate PRS
 ================
 X Shen
-08 September, 2021
+12 November, 2021
 
 This pipeline calculates PRS for the ENIGMA MDD PRS projects. There are
 a total of 6 steps in the protocol. Please use a linux machine for the
@@ -44,6 +44,7 @@ Open R, test if these packages are installed.
 library(dplyr)
 library(optparse)
 library(data.table)
+library(readr)
 ```
 
 If R gives an error message, install the package(s) using:
@@ -52,6 +53,7 @@ If R gives an error message, install the package(s) using:
 install.packages('dplyr')
 install.packages('optparse')
 install.packages('data.table')
+install.packages('readr')
 ```
 
 -----
@@ -73,7 +75,7 @@ Please download all GWAS sumstats using the following commands.
 enigma**
 
 ``` bash
-curl -u "MxG9YdrVLc29St7" "https://datasync.ed.ac.uk/public.php/webdav" -o data/sumstats.tar.gz
+curl -u "alXcWcVMeEnsKIj" "https://datasync.ed.ac.uk/public.php/webdav" -o data/sumstats.tar.gz
 tar -xvf data/sumstats.tar.gz -C data/
 ```
 
