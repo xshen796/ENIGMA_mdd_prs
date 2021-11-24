@@ -19,6 +19,7 @@ file.prefix=opt$plink %>% basename
 
 inputs = fread('data/input.txt',header=F,stringsAsFactors=F) %>% 
   select(summstats=V2,snpls=V1,method=V3) %>% 
+  .[!grepl('crp_nonukb_summstats.gz',.$summstats),] %>% 
   apply(.,MARGIN = 2,basename) %>% 
   as.data.frame(stringsAsFactors=F)
 
