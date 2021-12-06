@@ -1,7 +1,7 @@
 Calculate PRS
 ================
 X Shen
-12 November, 2021
+06 December, 2021
 
 This pipeline calculates PRS for the ENIGMA MDD PRS projects. There are
 a total of 6 steps in the protocol. Please use a linux machine for the
@@ -75,7 +75,7 @@ Please download all GWAS sumstats using the following commands.
 enigma**
 
 ``` bash
-curl -u "alXcWcVMeEnsKIj" "https://datasync.ed.ac.uk/public.php/webdav" -o data/sumstats.tar.gz
+curl -u "pDNEAB3dw5zipzO" "https://datasync.ed.ac.uk/public.php/webdav" -o data/sumstats.tar.gz
 tar -xvf data/sumstats.tar.gz -C data/
 ```
 
@@ -111,6 +111,12 @@ tar -xvf data/1000G.tar.gz -C data/
 ```
 
 \!\!\! The PRS script will detect if your sample is too small (N\<1000).
+
+#### A list of analyses to run
+
+You will receive a plain text file containing the entire list of
+analyses to run. Please make sure that **1) the file name is input.txt**
+and **2) put the file in the *data* folder**.
 
 -----
 
