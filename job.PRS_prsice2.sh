@@ -62,7 +62,7 @@ fi
 P_present=`cat data/check_genome_build_${base_file}.txt | grep 'present' |awk '{print $1}' `
 Loc_match=`cat data/check_genome_build_${base_file}.txt | grep 'loc_matched' |awk '{print $1}'`
 
-if (( $(bc <<< "$P_present<0.85") )); then
+if (( $(bc <<< "$P_present<0.80") )); then
     printf 'QUIT: Local genetic data is under an incompatible genome build\n'
     echo 'FAIL: incompatible genome build' >> PRS/log.txt
     exit 1
