@@ -55,20 +55,20 @@ if [ ! -f "data/check_genome_build_${base_file}.txt" ]
       Rscript util/check_genome_build.R --bim $parameterD
 fi
 
-# More than 25% SNPs not presented in the reference file or 
-# more than 5% presented SNPs in the wrong location 
+# More than 25% SNPs of local SNPs not found in the reference file or 
+# more than 10% presented SNPs in the wrong location 
 # then exit the script
 
 P_present=`cat data/check_genome_build_${base_file}.txt | grep 'present' |awk '{print $1}' `
 Loc_match=`cat data/check_genome_build_${base_file}.txt | grep 'loc_matched' |awk '{print $1}'`
 
-if (( $(bc <<< "$P_present<0.85") )); then
+if (( $(bc <<< "$P_present<0.75") )); then
     printf 'QUIT: Local genetic data is under an incompatible genome build\n'
     echo 'FAIL: incompatible genome build' >> PRS/log.txt
     exit 1
 fi
 
-if (( $(bc <<< "$Loc_match<0.95") )); then
+if (( $(bc <<< "$Loc_match<0.90") )); then
     printf 'QUIT: Local genetic data is under an incompatible genome build\n'
     echo 'FAIL: incompatible genome build' >> PRS/log.txt
     exit 1
