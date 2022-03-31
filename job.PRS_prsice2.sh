@@ -1,4 +1,4 @@
-while getopts "d:" opt
+while getopts ":d:" opt
 do
    case "$opt" in
       d ) parameterD="$OPTARG" ;;
@@ -63,10 +63,6 @@ P_present=`cat data/check_genome_build_${base_file}.txt | grep 'present' |awk '{
 Loc_match=`cat data/check_genome_build_${base_file}.txt | grep 'loc_matched' |awk '{print $1}'`
 
 if (( $(bc <<< "$P_present<0.75") )); then
-    printf 'QUIT: Local genetic data is under an incompatible genome build\n'
-    echo 'FAIL: incompatible genome build' >> PRS/log.txt
-    exit 1
-if (( $(bc <<< "$P_present<0.80") )); then
     printf 'QUIT: Local genetic data is under an incompatible genome build\n'
     echo 'FAIL: incompatible genome build' >> PRS/log.txt
     exit 1
@@ -214,4 +210,3 @@ if [ $N_missing_score = 0 ]; then
       echo 'FAIL: filess not generated:' >> PRS/log.txt
       cat data/missing_score >> PRS/log.txt
 fi
-
