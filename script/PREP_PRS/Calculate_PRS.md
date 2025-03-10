@@ -8,7 +8,7 @@ a total of 6 steps in the protocol. Please use a linux machine for the
 pipeline.
 
 For more information about PRSice 2.0, see its [wiki
-page](http://prsice.info/). For GCTA, see [wiki
+page](https://choishingwan.github.io/PRSice/). For GCTA, see [wiki
 page](https://cnsgenomics.com/software/gcta).
 
 -----
